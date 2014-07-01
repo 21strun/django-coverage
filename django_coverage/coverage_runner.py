@@ -79,7 +79,7 @@ class CoverageRunner(DjangoTestSuiteRunner):
         coverage_modules = []
         if test_labels:
             for label in test_labels:
-                label = label.split('.')[0]
+                label = label.split('.')[-1]
                 app = get_app(label)
                 coverage_modules.append(self._get_app_package(app))
         else:
